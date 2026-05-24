@@ -7,9 +7,9 @@
  *
  * Base color (tune to adjust hue at full brightness)
  */
-#define BASE_R 255
-#define BASE_G 255
-#define BASE_B 255
+#define BASE_R 230
+#define BASE_G 55
+#define BASE_B 35
 
 void pwm_init(void);
 void set_color(uint8_t brightness);
