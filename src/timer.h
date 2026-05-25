@@ -9,6 +9,6 @@
  * TIMSK1: OCIE1A=1 (compare-match interrupt)
  */
 
-void     timer1_init(void);
+void timer1_init(void);
 uint32_t ms_now(void);
-void     ms_delay(uint32_t ms);
+void ms_delay(uint32_t ms);

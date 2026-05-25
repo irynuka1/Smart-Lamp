@@ -13,5 +13,5 @@
  *   ADC1 (PC1) - potentiometer
  */
 
-void     adc_init(void);
+void adc_init(void);
 uint16_t adc_read(uint8_t ch);

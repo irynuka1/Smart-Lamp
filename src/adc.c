@@ -2,7 +2,7 @@
 #include <avr/io.h>
 
 void adc_init(void) {
-    ADMUX  = (1 << REFS0);  // AVcc reference
+    ADMUX = (1 << REFS0);  // AVcc reference
     ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); // enable, prescaler 128
 }
 

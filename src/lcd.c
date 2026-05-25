@@ -46,7 +46,6 @@ void lcd_init(void) {
     i2c_write(LCD_ADDR, LCD_BL);
     ms_delay(10);
 
-    // HD44780 datasheet reset sequence -> forces 4-bit mode from unknown state
     lcd_nibble(0x03, 0); ms_delay(5);
     lcd_nibble(0x03, 0); ms_delay(1);
     lcd_nibble(0x03, 0); ms_delay(1);
@@ -55,6 +54,6 @@ void lcd_init(void) {
     lcd_cmd(0x28); // Function Set: 4-bit, 2 lines, 5x8 dots
     lcd_cmd(0x0C); // Display Control: display on, cursor off, blink off
     lcd_cmd(0x06); // Entry Mode: increment cursor, no display shift
-    lcd_cmd(0x01); // Clear Display: needs between 1 and 2 ms to execute
+    lcd_cmd(0x01); // Clear Display
     ms_delay(2);
 }

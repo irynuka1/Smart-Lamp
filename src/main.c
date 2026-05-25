@@ -35,7 +35,7 @@ static const char *mode_name(Mode mode) {
 }
 
 static void lcd_update(uint8_t brightness, Mode mode) {
-    uint8_t pct    = (uint16_t)brightness * 100 / 255;
+    uint8_t pct = (uint16_t)brightness * 100 / 255;
     uint8_t filled = (uint16_t)brightness * 14  / 255;
 
     // Line 1: "MANUAL       75%"
@@ -59,8 +59,8 @@ static void lcd_update(uint8_t brightness, Mode mode) {
 
 int main(void) {
     // Button PB7: input + internal pull-up
-    DDRB  &= ~(1 << PB7);
-    PORTB |=  (1 << PB7);
+    DDRB &= ~(1 << PB7);
+    PORTB |= (1 << PB7);
 
     timer1_init();
     pwm_init();
@@ -70,10 +70,10 @@ int main(void) {
 
     lcd_init();
 
-    Mode     mode        = OFF;
-    uint8_t  btn_last    = 1;
+    Mode mode = OFF;
+    uint8_t btn_last = 1;
     uint32_t debounce_ts = 0;
-    uint32_t lcd_ts      = 0;
+    uint32_t lcd_ts = 0;
 
     for (;;) {
         // Button: falling edge -> cycle OFF -> MANUAL -> AUTO

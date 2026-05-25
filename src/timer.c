@@ -22,6 +22,6 @@ void ms_delay(uint32_t ms) {
 void timer1_init(void) {
     TCCR1A = 0;
     TCCR1B = (1 << WGM12) | (1 << CS11) | (1 << CS10); // CTC, prescaler 64
-    OCR1A  = 249;  // 16 MHz / 64 / 250 = 1 kHz -> 1 ms per tick
+    OCR1A = 249;  // 16 MHz / 64 / 250 = 1 kHz -> 1 ms per tick
     TIMSK1 = (1 << OCIE1A);
 }
